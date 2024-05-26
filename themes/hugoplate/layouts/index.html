@@ -35,6 +35,69 @@
   <!-- /Banner -->
 
   <!-- Features -->
+  <section class="section bg-white">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+        <!-- Feature 1 -->
+        <div class="p-6">
+          <h2 class="h4 mb-4">Language Agnostic</h2>
+          <p>L402's design is universally compatible, ensuring seamless integration across various programming environments and platforms.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="p-6">
+          <h2 class="h4 mb-4">Offline Attenuation</h2>
+          <p>Hold a valid token and dynamically generate a new one with restricted rights, enhancing security and control over access permissions.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="p-6">
+          <h2 class="h4 mb-4">HMAC, Very Fast Verification</h2>
+          <p>Utilizes HMAC for rapid verification processes, ensuring quick and secure authentication and transactions.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="p-6">
+          <h2 class="h4 mb-4">Open Ecosystem</h2>
+          <p>Designed to support an open and extensible framework, L402 encourages innovation and broad adoption across different sectors.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="p-6">
+          <h2 class="h4 mb-4">Based on HTTP 402 Status Code</h2>
+          <p>Leverages the "Payment Required" status code for initiating secure and standardized payment requests across the web.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="p-6">
+          <h2 class="h4 mb-4">Native Digital Payments (Lightning)</h2>
+          <p>Integrates with the Lightning Network to facilitate instant, low-cost payments, making it ideal for microtransactions and digital services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Features -->
+
+  <!-- Server and Auth Headers -->
+  {{ range $i, $e:= .Params.implementation_details }}
+  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+    <div class="container">
+        <div class="row items-center justify-between">
+          <div class="col-12 md:col-5">
+            <h2 class="mb-4">
+              {{ .title | markdownify }}
+            </h2>
+            <p class="mb-8 text-lg">
+              {{ .content | markdownify }}
+            </p>
+          </div>
+          <div class="col-12 md:col-7">
+            <pre class="overflow-hidden bg-gray-800 px-4 py-2 rounded-lg text-left">
+              {{ highlight .code "python" }}
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Server and Auth Headers -->
+
+  <!-- Components -->
   {{ range $i, $e:= .Params.features }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
       <div class="container">
@@ -76,7 +139,7 @@
       </div>
     </section>
   {{ end }}
-  <!-- /Features -->
+  <!-- /Components -->
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}

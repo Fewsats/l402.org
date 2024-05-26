@@ -1,9 +1,9 @@
 {
-  "name": "hugoplate",
-  "description": "hugo tailwindcss boilerplate",
+  "name": "l4gi02",
+  "description": "L402 - Internet-Native Paywalls",
   "version": "1.15.1",
   "license": "MIT",
-  "author": "zeon.studio",
+  "author": "fewsats",
   "scripts": {
     "dev": "hugo server",
     "build": "hugo --gc --minify --templateMetrics --templateMetricsHints --forceSyncStatic",
