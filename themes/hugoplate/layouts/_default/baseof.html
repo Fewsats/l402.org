@@ -10,9 +10,12 @@
     <!-- head (don't cache it) -->
     {{ partial "essentials/head.html" . }}
 
-
     <!-- style (always cache it) -->
     {{ partialCached "essentials/style.html" . }}
+
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+    </script>
 
   </head>
 
@@ -46,8 +49,22 @@
     <!-- footer -->
     <!-- {{ partial "essentials/footer.html" . }} -->
 
-
     <!-- script (always cache it) -->
     {{ partialCached "essentials/script.html" . }}
+  
+    </script>
+
+    <style>
+      .mermaid-diagram {
+        width: 100%;
+        max-width: 800px;
+        height: auto;
+      }
+      
+      .mermaid-diagram svg {
+        width: 100%;
+        height: auto;
+      }
+    </style>
   </body>
 </html>
