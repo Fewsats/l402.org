@@ -65,7 +65,7 @@ content = "You must replace the **baseURL** in **hugo.toml** file when deploying
 keywords = ["L402", "Macaroon", "Lightning"]
 description = "L402 decentralized payment system"
 author = "fewsats.org"
-image = "images/og-image.png"
+image = "images/og-image2.png"
 
 
 # site verifications
